@@ -10,7 +10,7 @@ class Calculate extends Component {
     }
 
     componentDidMount(){
-        this.setState({success:false, output:[]})
+        this.setState({success:false})
     }
 
     onChangevalue  = (e) => {

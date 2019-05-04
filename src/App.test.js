@@ -7,7 +7,7 @@ import Input from './component/calculate'
 
 Enzyme.configure({adapter: new Adapter()})
 
-const ModalTest = async (number) => {
+const ModelTest = async (number) => {
   const wrapper = shallow(<Input/>)
   await wrapper.find('input').simulate('change', { target: { value: number} })
   await wrapper.find('button').simulate('click')
@@ -23,15 +23,15 @@ describe('App calculator', () => {
   });
 
   it('change calculator 1 dollar', () => {
-    ModalTest(1)
+    ModelTest(1)
   })
 
   it('change calculator .99 dollar', () => {
-    ModalTest(.99)
+    ModelTest(.99)
   })
 
   it('change calculator 124.67  dollar', () => {
-    ModalTest(124.67)
+    ModelTest(124.67)
   })
 })
 
