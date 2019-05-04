@@ -1,8 +1,7 @@
 import React,{Component} from 'react'
-import Result from '../component/result'
+import Result from './result'
 
 class Calculate extends Component {
-
     state = {
         output : [],
         value:0,
@@ -11,7 +10,7 @@ class Calculate extends Component {
     }
 
     componentDidMount(){
-        this.setState({success:false})
+        this.setState({success:false, output:[]})
     }
 
     onChangevalue  = (e) => {
@@ -21,9 +20,6 @@ class Calculate extends Component {
 
     onResultval = async () => {
         let change_val
-        this.setState({
-            output:[]
-        })
         if(Math.floor(this.state.value / 100) > 0){
             change_val = await Math.floor(this.state.value / 100)
             this.setState({
@@ -36,9 +32,9 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / 50) > 0){
             change_val = await Math.floor(this.state.value / 50)
             this.setState({
-                    value: this.state.value - change_val * 50,
-                    ...this.state.output,
-                    output: [...this.state.output, {'50d':`Your change is ${change_val} 50 dollar bill`}]
+                value: this.state.value - change_val * 50,
+                ...this.state.output,
+                output: [...this.state.output, {'50d':`Your change is ${change_val} 50 dollar bill`}]
                 }, () => {
             })
         }
@@ -46,9 +42,9 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / 20) > 0){
             change_val = await Math.floor(this.state.value / 20)
             this.setState({
-                    value: this.state.value - change_val * 20,
-                    ...this.state.output,
-                    output: [...this.state.output, {'20d':`Your change is ${change_val} 20 dollar bill`}]
+                value: this.state.value - change_val * 20,
+                ...this.state.output,
+                output: [...this.state.output, {'20d':`Your change is ${change_val} 20 dollar bill`}]
                 }, () => {
             })
         }
@@ -56,9 +52,9 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / 10) > 0){
             change_val = await Math.floor(this.state.value / 10)
             this.setState({
-                    value: this.state.value - change_val * 10,
-                    ...this.state.output,
-                    output: [...this.state.output, {'10d':`Your change is ${change_val} 10 dollar bill`}]
+                value: this.state.value - change_val * 10,
+                ...this.state.output,
+                output: [...this.state.output, {'10d':`Your change is ${change_val} 10 dollar bill`}]
                 }, () => {
             })
         }
@@ -66,9 +62,9 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / 5) > 0){
             change_val = await Math.floor(this.state.value / 5)
             this.setState({
-                    value: this.state.value - change_val * 5,
-                    ...this.state.output,
-                    output: [...this.state.output, {'5d':`Your change is ${change_val} 5 dollar bill`}]
+                value: this.state.value - change_val * 5,
+                ...this.state.output,
+                output: [...this.state.output, {'5d':`Your change is ${change_val} 5 dollar bill`}]
                 }, () => {
             })
         }
@@ -76,9 +72,9 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / 1) > 0){
             change_val = await Math.floor(this.state.value / 1)
             this.setState({
-                    value: this.state.value - change_val * 1,
-                    ...this.state.output,
-                    output: [...this.state.output, {'1d':`Your change is ${change_val} 1 dollar bill`}]
+                value: this.state.value - change_val * 1,
+                ...this.state.output,
+                output: [...this.state.output, {'1d':`Your change is ${change_val} 1 dollar bill`}]
                 }, () => {
             })
         }
@@ -86,9 +82,9 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / .25) > 0){
             change_val = await Math.floor(this.state.value / .25)
             this.setState({
-                    value: this.state.value - change_val * .25,
-                    ...this.state.output,
-                    output: [...this.state.output, {'quarter':`Your change is ${change_val} quarter bill`}]
+                value: this.state.value - change_val * .25,
+                ...this.state.output,
+                output: [...this.state.output, {'quarter':`Your change is ${change_val} quarter bill`}]
                 }, () => {
             })
         }
@@ -96,9 +92,9 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / .10) > 0){
             change_val =  await Math.floor(this.state.value / .10)
             this.setState({
-                    value: this.state.value - change_val * .10,
-                    ...this.state.output,
-                    output: [...this.state.output, {'dime':`Your change is ${change_val} dime bill`}]
+                value: this.state.value - change_val * .10,
+                ...this.state.output,
+                output: [...this.state.output, {'dime':`Your change is ${change_val} dime bill`}]
                 }, () => {
             })
         }
@@ -106,9 +102,9 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / .05) > 0){
             change_val = await Math.floor(this.state.value / .05)
             this.setState({
-                    value: this.state.value - change_val * .05,
-                    ...this.state.output,
-                    output: [...this.state.output, {'nickel':`Your change is ${change_val} nickel bill`}]
+                value: this.state.value - change_val * .05,
+                ...this.state.output,
+                output: [...this.state.output, {'nickel':`Your change is ${change_val} nickel bill`}]
                 }, () => {
             })
         }
@@ -116,12 +112,11 @@ class Calculate extends Component {
         if(Math.floor(this.state.value / .01) > 0){
             change_val = await Math.round(this.state.value / .01)
             this.setState({
-                    value: this.state.value - change_val * .01,
-                    output: [...this.state.output, {'penny':`Your change is ${change_val} penny bill`}]
+                value: this.state.value - change_val * .01,
+                output: [...this.state.output, {'penny':`Your change is ${change_val} penny bill`}]
                 }, () => {
             })
         }
-
         this.setState({
             value:this.state.default_val, 
             success:true, 
@@ -131,9 +126,9 @@ class Calculate extends Component {
     render(){
         return (
             <>
-                <h1>Calculate</h1>
+                <h1>Change calculator</h1>
                 <input onChange={this.onChangevalue} type="number"/>
-                <button onClick={this.onResultval}>Calculate</button>
+                <button onClick={this.onResultval} style={{marginLeft:10, marginBottom:10}}>Calculate</button>
                 {this.state.success === true ? <Result data={this.state.output}/> : null }
             </>
         )
