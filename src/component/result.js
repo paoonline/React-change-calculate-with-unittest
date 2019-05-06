@@ -3,9 +3,9 @@ import React from 'react'
 const Result = (props) => {
     let result
     result = props.data.map( e => {
-        return <div key={Object.keys(e)}>{Object.values(e)[0]}</div>
+        return Object.values(e)[0]
     })
-    return result
+    return <div>{'Your change is' + result.concat().toString()}</div>
 }
 
 export default Result
