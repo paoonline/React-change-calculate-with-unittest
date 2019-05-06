@@ -33,6 +33,10 @@ describe('App calculator', () => {
   it('change calculator 124.67  dollar', () => {
     ModelTest(124.67)
   })
+
+  it('change calculator 0 dollar cannot change', () => {
+    ModelTest(0)
+  })
 })
 
 
